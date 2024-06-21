@@ -23,7 +23,8 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 def main():
     # Download the stopwords if you don't already have them...
-    nltk.download('punkt', 'stopwords', quiet = True)
+    nltk.download('stopwords', quiet = True)
+    nltk.download('punkt', quiet = True)
 
     # Get the text to analyze
     text = st.text_area("Text to analyze")
