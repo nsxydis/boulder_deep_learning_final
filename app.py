@@ -48,7 +48,7 @@ def main():
     st.altair_chart(chart)
 
     # Read in the vectorizer
-    with open('model/tfidf_vectorizer_v1.pkl', 'rb') as f:
+    with open('tfidf_vectorizer_v1.pkl', 'rb') as f:
         tfidf = pickle.load(f)
 
     # Transform the text
@@ -77,11 +77,11 @@ def main():
     # Display the results
     # prediction == 0: Not likely written by AI
     if prediction == 0:
-        st.write('The model believes that this was not written by AI')
+        st.write('# :nerd_face: The model believes that this was not written by AI')
 
     # prediction == 1: Likely written by AI
     elif prediction == 1:
-        st.write("The model believes this was written by AI")
+        st.write("# :robot_face: The model believes this was written by AI")
 
     # Catch errors
     else:
@@ -89,7 +89,8 @@ def main():
 
     # Show the probability
     try:
-        st.write(f'Predicted probability that this essay was written by AI: {round(prob * 100, 1)}%')
+        st.write('#### Predicted probability that this essay was written by AI:')
+        st.write(f'{round(prob * 100, 1)}%')
     except:
         pass
 

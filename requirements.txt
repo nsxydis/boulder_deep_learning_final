@@ -1,0 +1,6 @@
+polars
+altair
+streamlit
+torch
+nltk
+scikit-learn
